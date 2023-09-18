@@ -3,26 +3,29 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import UpdatePage from './pages/UpdatePage';
 import RestaurantDetailPage from './pages/RestaurantDetailPage';
+import { RestaurantsContextProvider } from './context/RestaurantContext';
 
 const App = () => {
   return (
-    <div className='container'>
-      <Router>
-        <Routes>
-          <Route exact path="/" Component={Home}></Route>
-          <Route
-            exact
-            path="/restaurants/:id/update"
-            Component={UpdatePage}
-          ></Route>
-          <Route
-            exact
-            path="/restaurants/:id"
-            Component={RestaurantDetailPage}
-          ></Route>
-        </Routes>
-      </Router>
-    </div>
+    <RestaurantsContextProvider>
+      <div className="container">
+        <Router>
+          <Routes>
+            <Route exact path="/" Component={Home}></Route>
+            <Route
+              exact
+              path="/restaurants/:id/update"
+              Component={UpdatePage}
+            ></Route>
+            <Route
+              exact
+              path="/restaurants/:id"
+              Component={RestaurantDetailPage}
+            ></Route>
+          </Routes>
+        </Router>
+      </div>
+    </RestaurantsContextProvider>
   );
 };
 
