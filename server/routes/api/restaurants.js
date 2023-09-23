@@ -8,7 +8,7 @@ const db = require('../../db');
 router.get('/', async (req, res) => {
   try {
     const results = await db.query('SELECT * FROM restaurants');
-    res.json({
+    res.status(200).json({
       status: 'success',
       results: results.rows.length,
       data: {

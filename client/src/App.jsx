@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import UpdatePage from './pages/UpdatePage';
 import RestaurantDetailPage from './pages/RestaurantDetailPage';
-import { RestaurantsContextProvider } from './context/RestaurantContext';
+import { RestaurantsContextProvider } from './context/RestaurantsContext';
 
 const App = () => {
   return (
