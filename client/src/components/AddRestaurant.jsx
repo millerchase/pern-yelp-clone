@@ -20,6 +20,7 @@ function AddRestaurant() {
       addRestaurant(response.data.data.restaurant);
     } catch (error) {}
   };
+
   return (
     <div className="mb-4">
       <form action="">
