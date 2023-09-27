@@ -47,12 +47,6 @@ const RestaurantList = props => {
                 </tr>
               );
             })}
-          {/* <tr>
-            <td>McDonald's</td>
-            <td>New York</td>
-            <td>$$</td>
-            <td>Rating</td>
-          </tr> */}
         </tbody>
       </table>
     </div>
