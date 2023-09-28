@@ -48,8 +48,6 @@ function AddRestaurant() {
               value={priceRange}
               onChange={e => setPriceRange(e.target.value)}
               className="form-select mr-sm-2"
-              name=""
-              id=""
             >
               <option disabled>Price Range</option>
               <option value="1">$</option>
