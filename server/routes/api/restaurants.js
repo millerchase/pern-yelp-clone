@@ -24,13 +24,23 @@ router.get('/', async (req, res) => {
 // Get a single restaurant
 router.get('/:id', async (req, res) => {
   try {
-    const results = await db.query('SELECT * FROM restaurants WHERE id = $1', [
-      req.params.id
-    ]);
+    // GET restaurant data via ID
+    const restaurant = await db.query(
+      'SELECT * FROM restaurants WHERE id = $1',
+      [req.params.id]
+    );
+
+    // GET same restaurant's reviews data
+    const reviews = await db.query(
+      'SELECT * FROM reviews WHERE restaurant_id = $1',
+      [req.params.id]
+    );
+
     res.json({
       status: 'success',
       data: {
-        restaurant: results.rows[0]
+        restaurant: restaurant.rows[0],
+        reviews: reviews.rows
       }
     });
   } catch (err) {

@@ -33,6 +33,7 @@ const UpdateRestaurant = props => {
         price_range: priceRange
       });
       navigate('/');
+      console.log(`${updatedRestaurant.name} updated successfully`);
     } catch (error) {
       console.log(error);
     }
